@@ -149,6 +149,10 @@
   .story-image {
     width: auto;       /* Giảm chiều rộng */
     height: 450px;    /* Chiều cao cố định vừa phải */
+    display: block;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
     object-fit: contain;
     box-shadow: 20px 20px 60px rgba(0,0,0,0.05);
     border-radius: 4px; /* Bo góc nhẹ cho mềm mại */
@@ -328,7 +332,8 @@
 
 
   ];
-  memories.sort((a, b) => new Date(b.date) - new Date(a.date));
+  // memories.sort((a, b) => new Date(b.date) - new Date(a.date));
+  memories.sort((a, b) => b.date.localeCompare(a.date));
   /* ------------------------------------------------ */
 
   //const container = document.getElementById('timeline-list');
